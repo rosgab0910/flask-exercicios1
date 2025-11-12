@@ -19,4 +19,8 @@ def saudar(nome):
 @app.route('/quadrado/<int:n>')
 def quadrado(n):
     resultado = n ** 2
-    return f'{n}² = {resultado}'    
+    return f'{n}² = {resultado}'
+
+@app.route('/home')
+def home():
+    return redirect('/')    

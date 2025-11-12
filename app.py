@@ -28,3 +28,21 @@ def home():
 @app.route('/pagina')
 def pagina():
     return render_template('pagina.html')
+
+@app.route('/buscar/<item>')
+def buscar(item):
+    itens = ["maçã", "banana", "laranja", "uva", "morango"]
+
+    encontrado = False
+    for elemento in itens:
+        if elemento == item:
+            encontrado = True
+            break
+    
+if encontrado:
+        return f'Item "{item}" encontrado na lista.'
+else:
+        return f'Item "{item}" não encontrado na lista.'
+
+if __name__ == '__main__':
+    app.run(debug=True)
